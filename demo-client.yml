@@ -1,0 +1,29 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${DISCOVERY_URL:http://localhost:8370/eureka/}
+    registerWithEureka: true
+
+---
+
+spring:
+  profiles: test
+
+server:
+  port: 8080
+
+common:
+  env: test
+  greetings: test env at ur service
+
+---
+
+spring:
+  profiles: prod
+
+server:
+  port: 8081
+
+common:
+  env: prod
+  greetings: prod env at ur service
